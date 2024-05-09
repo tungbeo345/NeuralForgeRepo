@@ -1,11 +1,4 @@
-function reverseList(head) {
-  let prev = null;
-  let curr = head;
-  while (curr) {
-    const next = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = next;
-  }
-  return prev;
+function largestNumber(nums) {
+  if (nums.every((num) => num === 0)) return "0";
+  return nums.sort((a, b) => `${b}${a}` - `${a}${b}`).join("");
 }
